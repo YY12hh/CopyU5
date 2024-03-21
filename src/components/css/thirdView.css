@@ -1,0 +1,83 @@
+.third-view-container {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    background-color: #2D3748;
+    padding: 20px;
+    top: 342px;
+    position: relative;
+    left: 260px;
+    border-radius: 35px;
+}
+
+.vector-icon-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vector-icon-container img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.vector-text {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.header-container {
+    width: 96px;
+    /* Adjust if needed */
+    height: 32px;
+    /* Adjust if needed */
+    background-color: #1A202C;
+    position: absolute;
+    /* Position in the top right corner */
+    top: 20px;
+    /* Adjust based on the container padding */
+    right: 20px;
+    /* Adjust based on the container padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 34px;
+    /* Optional rounded corners */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.header-content span {
+    color: #A0AEC0;
+    font-size: 14px;
+    left: 14px;
+    position: relative;
+    top: -1px;
+}
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* Horizontal alignment */
+    align-items: flex-start
+}
+
+.image-item {
+    padding-bottom: 35px;
+}
+
+.game-name {
+    position: relative;
+    left: -133px;
+    top: 20px;
+    color: white;
+    size: 14px;
+}
