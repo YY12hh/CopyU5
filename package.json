@@ -9,6 +9,8 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
+    "swiper": "^11.0.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +36,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

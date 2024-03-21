@@ -1,13 +1,19 @@
 .App {
-  text-align: center;
-  width:100%;
-  padding:20px;
+  text-align: right;
+  width: 95%;
+  height: 100%;
+  padding: 20px;
 }
 
+/* App.css */
+.app-container {
+  height: 1000vh;
+  background-image: linear-gradient(to bottom, #373638, #070D13);
+}
 
-.search input{
-  padding:10px;
-  width:320px;
+.search input {
+  padding: 10px;
+  width: 320px;
 }
 
 
@@ -22,13 +28,18 @@
   }
 }
 
+/**
+reduce：用户希望减少动画。
+no-preference：用户没有特定的动画偏好。
+默认值（未指定）：如果浏览器不支持这个特性或用户没有设置偏好，通常被视为 no-preference
+*/
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content: right;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -41,7 +52,423 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.scroller .inner img {
+  display: block;
+  height: 250px;
+}
+
+.scroller {
+  width: 400px;
+  height: 250px;
+  position: relative;
+}
+
+.scroller .inner::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller .inner {
+  overflow: scroll;
+  width: 300%;
+  overflow: hidden;
+}
+
+.scroller .inner img {
+  width: 33.33%;
+  display: block;
+  height: 500px;
+  float: left;
+}
+
+.demo {
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+  min-width: 1200px;
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 72px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .prev {
+    left: -70px;
+  }
+
+  .next {
+    right: -70px;
+  }
+
+  .item {
+    margin: 50px 0;
+    width: 162px;
+    box-shadow: 3px 6px 8px #dde0e8;
+  }
+
+  .message {
+    width: 48px;
+    color: black;
+  }
+}
+
+
+.image-overlay-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-overlay-container .TitlebottomBg {
+  width: 100%;
+  height: 84px;
+  border-end-start-radius: 50px;
+  background-color: #171923;
+  display: block;
+}
+
+.image-overlay-container .message {
+  position: absolute;
+  right: 120px;
+  top: 35px;
+  transform: translateY(-50%);
+  max-width: 50%;
+  height: 48px;
+  width: 48px;
+}
+
+.image-overlay-container .message h3 {
+  font-size: 18px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.image-overlay-container .info-Button {
+  position: relative;
+  right: 13%;
+  float: right;
+  top: -72px;
+  width: 143px;
+  height: 52px;
+  border-radius: 25px;
+  background-color: #2d3748;
+}
+
+.image-overlay-container .info-Button-2 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  right: 15%;
+  float: right;
+  top: -72px;
+  width: 287px;
+  height: 52px;
+  border-radius: 25px;
+  background-color: #2d3748;
+}
+
+.image-overlay-container .lable {
+  color: white;
+  position: absolute;
+  right: -10px;
+  float: right;
+  top: -15px;
+  width: 143px;
+  height: 52px;
+}
+
+.image-overlay-container .top_image_message_dispaly_red {
+  color: white;
+  position: absolute;
+  right: 118px;
+  float: right;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+.image-overlay-container .info .info_head {
+  color: white;
+  position: absolute;
+  right: 295px;
+  float: right;
+  top: 16px;
+  width: 44px;
+  height: 44px;
+}
+
+.image-overlay-container .info h1 {
+  position: absolute;
+  color: white;
+  right: 241px;
+  float: right;
+  top: 10px;
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+.image-overlay-container .refreshMoney .icon_refresh {
+  color: white;
+  position: absolute;
+  right: 627px;
+  float: right;
+  top: 27px;
+  width: 24px;
+  height: 24px;
+}
+
+
+.image-overlay-container .refreshMoney h1 {
+  position: absolute;
+  color: white;
+  right: 571px;
+  float: right;
+  top: 18px;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+.image-overlay-container .refreshMoney .btnAddNurmal {
+  position: absolute;
+  color: white;
+  right: 389px;
+  float: right;
+  top: 11px;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.MainLeftDetails {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  padding-top: 20px;
+  top: -135px;
+  left: 0px;
+  width: 240px;
+  height: 1048px;
+  background-color: #1a202c;
+  border-radius: 35px;
+}
+
+.MainLeftDetails .btn_left {
+  position: relative;
+  right: -113px;
+  top: -520px;
+}
+
+
+.MainLeftMinification {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  padding-top: 20px;
+  top: -135px;
+  left: 0px;
+  width: 120px;
+  height: 1048px;
+  background-color: #1a202c;
+  border-radius: 35px;
+}
+
+.MainLeftMinification .btn_right {
+  position: relative;
+  top: -350px;
+  left: 54px;
+  background-color: #1a202c;
+  border-radius: 35px;
+}
+
+.MainLeftMinification .left_icon {
+  position: absolute;
+  flex-direction: column;
+  float: top;
+}
+
+.righttopView {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.righttopView .img {
+  width: 48px;
+  height: 48px;
+}
+
+.download,
+.share {
+  width: 100%;
+  /* 或者你需要的具体尺寸 */
+  height: auto;
+  /* 保持图片比例 */
+  cursor: pointer;
+  /* 鼠标悬停时变为手型，表示可点击 */
+  transition: transform 0.3s ease;
+  /* 平滑的过渡效果 */
+}
+
+.enlarged {
+  transform: scale(1.2);
+  /* 放大图片，你可以调整这个值 */
+}
+
+.buttomCentent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 35px;
+  background-color: #2D3748;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.fixed-element {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.icon-bar-container {
+  width: 1200px;
+  height: 64px;
+  border-radius: 35px;
+  background-color: #2D3748;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  top: 323px;
+  position: relative;
+  z-index: 1;
+  left: 250px;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.icon-item:last-child {
+  margin-right: 0;
+}
+
+.icon-image {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-title {
+  font-size: 16px;
+  color: white;
+  margin-left: 5px;
+}
+
+.first-icon {
+  width: 149px;
+  height: 40px;
+  background-color: #FF9502;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.first-icon .icon-image {
+  /* 如果需要，可以给第一张图片的图标添加特定样式 */
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  /* 图标之间的间距 */
+}
+
+.icon-image {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-title {
+  font-size: 16px;
+  color: white;
+  margin-left: 5px;
+  /* 图标与标题之间的间距 */
+}
+
+/* 特殊处理最后一张图标 */
+.last-icon-container {
+  flex-shrink: 0;
+  /* 防止容器被压缩 */
+  margin-left: auto;
+  /* 将容器推到右侧 */
+}
+
+.slider {
+  position: absolute;
+  top: 11%;
+  left: 32%;
+}
+
+.slide-title {
+  position: absolute;
+  color: white;
+  left: 5%;
+  top: 15%;
+  font-size: large;
+}
+
+.selected .icon-image {
+  filter: sepia(1) hue-rotate(30deg) saturate(255);
+}
+
+.orange-filter {
+  filter: sepia(1) hue-rotate(30deg) saturate(255);
 }
