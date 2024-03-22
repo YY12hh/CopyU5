@@ -6,7 +6,8 @@ import left_icon_3 from "../asset/CenterTopIcon/3.png";
 import left_icon_4 from "../asset/CenterTopIcon/4.png";
 import left_icon_5 from "../asset/CenterTopIcon/5.png";
 import left_icon_6 from "../asset/CenterTopIcon/6.png";
-import left_icon_7 from "../asset/CenterTopIcon/7.png";
+import search from "../asset/CenterTopIcon/7.png";
+import { IconBarComp } from "./Tools/comment";
 
 const centerTopIconItem = [
     { src: left_icon_0, title: "All(2024)" },
@@ -16,7 +17,6 @@ const centerTopIconItem = [
     { src: left_icon_4, title: "Viver" },
     { src: left_icon_5, title: "Favoritos" },
     { src: left_icon_6, title: "Recente" },
-    { src: left_icon_7, title: "" },
 ];
 
 const CenterTopIcon = () => {
@@ -27,32 +27,17 @@ const CenterTopIcon = () => {
     };
 
     return (
-        <div className="icon-bar-container">
-            {centerTopIconItem.slice(0, -1).map((item, index) => (
-                <div
-                    key={index}
-                    className={`icon-item ${index === 0 ? 'first-icon' : ''} ${selectedIconIndex === index ? 'selected' : ''}`}
-                    onClick={() => handleIconClick(index)}
-                >
-                    <img
-                        src={item.src}
-                        alt={item.title}
-                        className={`icon-image ${selectedIconIndex === index ? 'orange-filter' : ''}`}
-                    />
-                    <span className="icon-title">{item.title}</span>
-                </div>
-            ))}
-            {/* 添加一个额外的div来放置最后一张图标 */}
-            <div className="last-icon-container">
-                <div className="icon-item">
-                    <img src={centerTopIconItem[centerTopIconItem.length - 1].src}
-                        alt={centerTopIconItem[centerTopIconItem.length - 1].title}
-                        className="icon-image" />
-                    <span className="icon-title">{centerTopIconItem[centerTopIconItem.length - 1].title}</span>
-                </div>
-            </div>
-        </div>
+        <IconBarComp
+            centerTopIconItem={centerTopIconItem}
+            selectedIconIndex={selectedIconIndex}
+            handleIconClick={handleIconClick}
+            search={search}
+        />
     );
 };
 
 export default CenterTopIcon;
+
+
+
+

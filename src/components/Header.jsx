@@ -12,7 +12,7 @@ import { useState } from "react";
 import "swiper/css";
 
 const Header = () => {
-  const [lvValue, setLvValue] = useState(99);
+  const [lvValue, setLvValue] = useState(12);
   const [idValue, setIdValue] = useState(1216);
   const updateLvValue = (newValue) => {
     setLvValue(newValue);

@@ -1,42 +1,68 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+const images = [
+  { src: banner_about, title: "About" },
+  { src: banner_checkin, title: "Check-in" },
+  { src: banner_primeira_recarga, title: "Primeira Recarga" },
+  { src: banner_recommend, title: "Recommend" },
+  { src: banner_vip, title: "VIP" },
+];
 
-const RightTopView = () => {
-  const [isEnlarged, setIsEnlarged] = useState([false, false, false]);
-  const handleImageClick = (index) => (e) => {
-    const newIsEnlarged = [...isEnlarged];
-    newIsEnlarged[index] = !isEnlarged[index];
-    setIsEnlarged(newIsEnlarged);
+const AlternatingChart = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isSliding) {
+        slideRight();
+      }
+    }, 3000);
+  });
+
+  const slideRight = () => {
+    setIsSliding(true); // 开始滑动
+    const nextIndex = (activeIndex + 1) % images.length;
 
     setTimeout(() => {
-      const react = isEnlarged.map(() => false);
-      setIsEnlarged(react);
-    }, 300);
-    e.stoProgation();
+      setIsSliding(false); // 滑动结束
+    }, 500);
   };
 
-  const getEnlargedSize = (index) => {
-    if (isEnlarged[index]) {
-      return 100;
-    } else {
-      return 50;
-    }
+  const sliderLeft = () => {
+    setIsSliding(true); // 开始滑动s
+    const prevIndex = (activeIndex - 1) % images.length;
   };
-};
-const styles = {
-  container: {
-    width: 100,
-    height: 100,
-    backgroundColor: "red",
-    position: "absolute",
-    top: 0,
-    left: 0,
-  },
-  image: {
-    width: (index) => getEnlargedSize(index),
-    height: (index) => getEnlargedSize(index),
-  },
-};
 
-return <div style={styles.container}></div>;
+  useEffect(() => {
+    const handleKeydown = (event) => {
+      if (event.key == "ArrowLeft") {
+        sliderLeft();
+      } else if (event.key === "ArrowRight") {
+        slideRight();
+      }
+    };
 
-export default RightTopView;
+    document.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeydown);
+    };
+  }, []);
+
+  return (
+    <div className="slider">
+      <CSSTransition
+        key={images[activeIndex].title}
+        timeout={500}
+        classNames="fade"
+      >
+        <div className="slide">
+          <img
+            src={images[activeIndex].sr}
+            alt={images[activeIndex].title}
+          ></img>
+        </div>
+      </CSSTransition>
+    </div>
+  );
+};

@@ -9,6 +9,7 @@ import Bg_6 from "../asset/CentenBg/Bg.png";
 import Bg_7 from "../asset/CentenBg/Bg.png";
 import vector from "../asset/CentenBg/vector.png";
 import btn from "../asset/CentenBg/btn.png";
+import ImageScroll from "./Tools/comment";
 import './css/SecondView.css';
 
 const images = [
@@ -30,8 +31,6 @@ const SecondView = () => {
         const scrollWrapper = scrollWrapperRef.current;
         const scrollAmount = scrollWrapper.scrollWidth / images.length;
         scrollWrapper.scrollLeft += scrollAmount;
-        console.log('sssssssssssssssss');
-
     };
 
     return (
@@ -43,10 +42,10 @@ const SecondView = () => {
                 <span>Recente</span>
             </div>
             <div className="image-scroll-container">
-                <div className="image-scroll-wrapper" ref={scrollWrapperRef} onScroll={e => handleScroll(e)} style={{ scrollLeft: scrollLeft }}>
-                    {images.map((image, index) => (
-                        <img key={index} src={image.src} alt="" className="scroll-image" />
-                    ))}
+                <div className="image-scroll-wrapper"
+                    ref={scrollWrapperRef} onScroll={e => handleScroll(e)}
+                    style={{ scrollLeft: scrollLeft }}>
+                    <ImageScroll images={images} />
                 </div>
             </div>
             <div className="btn-container" >

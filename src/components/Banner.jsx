@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import banner_about from "../asset/alternatingChart/banner_about.png";
-import banner_checkin from "../asset/alternatingChart/banner_checkin.png";
-import banner_primeira_recarga from "../asset/alternatingChart/banner_primeira_recarga.png";
-import banner_recommend from "../asset/alternatingChart/banner_recommend.png";
-import banner_vip from "../asset/alternatingChart/banner_vip.png";
+import banner_about from "../asset/Banner/banner_about.png";
+import banner_checkin from "../asset/Banner/banner_checkin.png";
+import banner_primeira_recarga from "../asset/Banner/banner_primeira_recarga.png";
+import banner_recommend from "../asset/Banner/banner_recommend.png";
+import banner_vip from "../asset/Banner/banner_vip.png";
 
-import "./css/AlternatingChart.js";
 
 const images = [
     { src: banner_about, title: "About" },
@@ -17,11 +16,10 @@ const images = [
     { src: banner_vip, title: "VIP" },
 ];
 
-const AlternatingChart = () => {
+const Banner = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isSliding, setIsSliding] = useState(false);
 
-    // 设置定时器  
     useEffect(() => {
         const timer = setInterval(() => {
             if (!isSliding) {
@@ -29,7 +27,7 @@ const AlternatingChart = () => {
             }
         }, 3000); // 每3秒滑动一次  
 
-        return () => clearInterval(timer); // 清除定时器  
+        return () => clearInterval(timer);
     }, [isSliding]);
 
     // 滑动到下一个图片  
@@ -50,7 +48,6 @@ const AlternatingChart = () => {
         const prevIndex = (activeIndex - 1 + images.length) % images.length;
         setActiveIndex(prevIndex);
 
-        // 假设滑动动画的时长为500ms  
         setTimeout(() => {
             setIsSliding(false); // 滑动结束  
         }, 500);
@@ -89,4 +86,4 @@ const AlternatingChart = () => {
     );
 };
 
-export default AlternatingChart;
+export default Banner;
