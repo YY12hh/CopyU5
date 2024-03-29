@@ -382,8 +382,8 @@ no-preference：用户没有特定的动画偏好。
   align-items: center;
   padding: 0 10px;
   box-sizing: border-box;
-  top: 323px;
-  position: relative;
+  top: 473px;
+  position: absolute;
   z-index: 1;
   left: 250px;
 }

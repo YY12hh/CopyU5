@@ -9,7 +9,7 @@ const ImageScroll = ({ images }) => (
 export default ImageScroll;
 
 
-const IconBarComp = ({ centerTopIconItem, selectedIconIndex, handleIconClick, search }) => (
+export const IconBarComp = ({ centerTopIconItem, selectedIconIndex, handleIconClick, search }) => (
     <div className="icon-bar-container">
         {centerTopIconItem.map((item, index) => (
             <div
@@ -34,6 +34,19 @@ const IconBarComp = ({ centerTopIconItem, selectedIconIndex, handleIconClick, se
     </div>
 );
 
-export { IconBarComp };
 
-
+// 改装成LeftSlider的显示隐藏节点
+export const LeftSidePanel = ({ isMinimized, imgSrc, btnSrc, btnAlt, btnOnClick, className, children }) => {
+    return (
+        <div className={`fixed-element ${className}`}>
+            <img src={imgSrc} />
+            <img
+                className={isMinimized ? 'btn_right' : 'btn_left'}
+                src={btnSrc}
+                onClick={btnOnClick}
+                alt={btnAlt}
+            />
+            {children}
+        </div>
+    );
+};

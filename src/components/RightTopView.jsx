@@ -12,7 +12,6 @@ const RightTopView = () => {
             const resetEnlarged = isEnlarged.map(() => false);
             setIsEnlarged(resetEnlarged);
         }, 300);
-        e.stopPropagation();
     };
 
     const getEnlargedSize = (index) => isEnlarged[index] ? 52 : 42;
@@ -55,7 +54,7 @@ const RightTopView = () => {
             justifyContent: "space-between",
             padding: "0 10px",
             borderRadius: 35,
-            backgroundColor: "#2D3748",
+            backgroundColor: "#2D3748", // stylesCompents
         },
         image: {
             cursor: "pointer",
@@ -71,30 +70,26 @@ const RightTopView = () => {
         },
     };
 
+
+    // 提取出的 ShareIcon 组件  
+    const ShareIcon = ({ index, handleImageClick }) => (
+        <img
+            className="share"
+            src={shareImg}
+            alt="Share"
+            style={{ ...styles.image, width: getEnlargedSize(index), height: getEnlargedSize(index) }}
+            onClick={() => handleImageClick(index)}
+        />
+    );
+
     return (
         <div style={styles.container}>
-            <img className="download"
-                style={{ ...styles.image, width: getEnlargedSize(0), height: getEnlargedSize(0) }}
-                src={DownloadImg} alt="Download"
-                onClick={handleImageClick(0)}
-            />
+            <ShareIcon index={0} handleImageClick={handleImageClick(0)} />
             <div className="righttopView" style={styles.righttopView}>
                 <div className="buttomCentent" style={styles.buttomCentent}>
-                    <img
-                        className="share"
-                        src={shareImg}
-                        alt="Share"
-                        style={{ ...styles.image, width: getEnlargedSize(1), height: getEnlargedSize(1) }}
-                        onClick={handleImageClick(1)}
-                    />
+                    <ShareIcon index={1} handleImageClick={handleImageClick(1)} />
                     <h3 style={styles.text}>Gerente</h3>
-                    <img
-                        className="share"
-                        src={shareImg}
-                        alt="Share"
-                        style={{ ...styles.image, width: getEnlargedSize(2), height: getEnlargedSize(2) }}
-                        onClick={handleImageClick(2)}
-                    />
+                    <ShareIcon index={2} handleImageClick={handleImageClick(2)} />
                     <h3 style={styles.text}>Serviço</h3>
                 </div>
             </div>

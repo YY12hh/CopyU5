@@ -1,0 +1,64 @@
+.app-layout {
+    width: 1920px;
+    height: 348px;
+    background-color: #171923;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    /* 根据需要调整内边距 */
+    box-sizing: border-box;
+    position: relative;
+    top: 1%;
+}
+
+.lists-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.list-item {
+    flex: 1;
+    /* 分配相等的空间 */
+}
+
+.list-title {
+    font-size: 16px;
+    color: #CBD5E0;
+}
+
+.img-line {
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    left: -30%;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    /* 调整间距 */
+}
+
+.footer-text {
+    color: #A0AEC0;
+    Size: 12px
+}
+
+.icons-container {
+    margin: 10px px;
+    position: absolute;
+    left: 20%;
+    bottom: 18%;
+    padding: 14px;
+}

@@ -10,6 +10,7 @@ import RightTopView from "./components/RightTopView";
 import CenterTopIcon from "./components/CenterTopIcon";
 import SecondView from "./components/SecondView";
 import ThirdView from "./components/ThirdView";
+import FooterView from "./components/FooterView";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <CenterTopIcon></CenterTopIcon>
         <SecondView></SecondView>
         <ThirdView></ThirdView>
+        <FooterView></FooterView>
       </div>
     </div>
   );

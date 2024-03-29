@@ -4,8 +4,8 @@
     flex-direction: column;
     background-color: #2D3748;
     padding: 20px;
-    top: 342px;
-    position: relative;
+    top: 702px;
+    position: absolute;
     left: 260px;
     border-radius: 35px;
 }
@@ -29,21 +29,15 @@
 
 .header-container {
     width: 96px;
-    /* Adjust if needed */
     height: 32px;
-    /* Adjust if needed */
     background-color: #1A202C;
     position: absolute;
-    /* Position in the top right corner */
     top: 20px;
-    /* Adjust based on the container padding */
     right: 20px;
-    /* Adjust based on the container padding */
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 34px;
-    /* Optional rounded corners */
 }
 
 .header-content {
@@ -66,7 +60,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* Horizontal alignment */
     align-items: flex-start
 }
 
